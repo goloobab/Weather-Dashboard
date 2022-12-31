@@ -51,7 +51,10 @@ $(document).ready(function () {
    
     function createSearchHistoryBtn(city){
          var buttonEl = $('<button>').addClass('btn btn-secondary search-button btn-block').text(city);
-        $('#history').append(buttonEl)
+        $('#history').prepend(buttonEl)
+        buttonEl.click(function(event){
+            displayCityWeather(city);
+        });
     }
 
 
