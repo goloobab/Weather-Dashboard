@@ -25,7 +25,7 @@ $(document).ready(function () {
         // localStorage.setItem('cities', JSON.stringify(cityNames));
         // console.log(localStorage.getItem('cities'));
         displayCityWeather(cityName);
-        //populateHistoryBtnContainer();
+        populateHistoryBtnContainer();
     })
 
     function getCitiesArrayFromLocalStorage(){
