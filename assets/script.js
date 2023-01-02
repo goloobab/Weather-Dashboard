@@ -1,6 +1,9 @@
 $(document).ready(function () {
 
-     //Saving the user's input into a variable and call the function that displays the weather info
+    // Populate search history when the page loads first time(or when it is refreshed)
+    populateSearchHistory()
+
+    //Saving the user's input into a variable and call the function that displays the weather info
     $('#search-button').click(function (event) {
         event.preventDefault();
 
@@ -11,7 +14,7 @@ $(document).ready(function () {
             populateHistoryBtnContainer();
         }
     })
-
+    populateHistoryBtnContainer();
     function getCitiesArrayFromLocalStorage(){
         var cities = localStorage.getItem("cities")
         if (cities === null){
@@ -27,8 +30,8 @@ $(document).ready(function () {
     }
     
     function populateHistoryBtnContainer(){
+        $('#history').empty()
         var citiesSearchHistory = JSON.parse(localStorage.getItem("cities"))
-         
         citiesSearchHistory.forEach(city => {
             var button = createSearchHistoryBtn(city)
             $('#history').prepend(button)
