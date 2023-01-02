@@ -5,27 +5,12 @@ $(document).ready(function () {
         event.preventDefault();
 
         var cityName = $('#search-input').val().trim()
+        if (cityName !== null){
+            storeCityToLocalStorage(cityName);
+            displayCityWeather(cityName);
+            populateHistoryBtnContainer();
+        }
         
-        storeCityToLocalStorage(cityName);
-
-        // var cityNames
-        // //Getting cities Array from local storage
-        // var cities = localStorage.getItem('cities');
-        // //Checking to see if the cities array contains data
-        // if(cities === null){
-        //     //This block is called only when the cities array is empty (first time when the application is used)
-        //     cityNames = [];
-        // }else {
-        //     //This is called if cities array from the local storage is not empty.
-        //     cityNames = JSON.parse(localStorage.getItem('cities'));
-        // }
-        // //Adding city name to the cityNames array we got from the local storage.
-        // cityNames.push(cityName);
-        // //Putting the cityNames array back into the local storage after stringifying it.
-        // localStorage.setItem('cities', JSON.stringify(cityNames));
-        // console.log(localStorage.getItem('cities'));
-        displayCityWeather(cityName);
-        populateHistoryBtnContainer();
     })
 
     function getCitiesArrayFromLocalStorage(){
@@ -43,19 +28,21 @@ $(document).ready(function () {
     }
     
     function populateHistoryBtnContainer(){
-        var city = JSON.parse(localStorage.getItem("cities"))
-        //citiesSearchHistory.forEach(city => {
-            createSearchHistoryBtn(city)
-        //}); 
+        var citiesSearchHistory = JSON.parse(localStorage.getItem("cities"))
+         
+        citiesSearchHistory.forEach(city => {
+            var button = createSearchHistoryBtn(city)
+            $('#history').prepend(button)
+        }); 
         
     }
    
     function createSearchHistoryBtn(city){
-         var buttonEl = $('<button>').addClass('btn btn-secondary search-button btn-block').text(city);
-        $('#history').prepend(buttonEl)
+        var buttonEl = $('<button>').addClass('btn btn-secondary search-button btn-block').text(city);
         buttonEl.click(function(event){
             displayCityWeather(city);
         });
+        return buttonEl
     }
 
 
