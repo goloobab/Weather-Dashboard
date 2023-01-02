@@ -6,7 +6,6 @@ $(document).ready(function () {
     //Saving the user's input into a variable and call the function that displays the weather info
     $('#search-button').click(function (event) {
         event.preventDefault();
-
         var cityName = $('#search-input').val().trim()
         if (cityName !== ""){
             storeCityToLocalStorage(cityName);
