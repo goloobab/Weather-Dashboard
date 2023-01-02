@@ -31,10 +31,10 @@ $(document).ready(function () {
     function populateSearchHistory(){
         $('#history').empty()
         var citiesSearchHistory = JSON.parse(localStorage.getItem("cities"))
-        citiesSearchHistory.forEach(city => {
+        for(let i =0; i < citiesSearchHistory.length; i++){
             var button = createSearchHistoryBtn(city)
             $('#history').prepend(button)
-        }); 
+        }; 
         
     }
    
