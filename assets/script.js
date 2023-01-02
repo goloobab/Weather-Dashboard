@@ -10,7 +10,7 @@ $(document).ready(function () {
         if (cityName !== ""){
             storeCityToLocalStorage(cityName);
             displayCityWeather(cityName);
-            populateHistoryBtnContainer();
+            populateSearchHistory();
         }
     })
     
@@ -28,7 +28,7 @@ $(document).ready(function () {
         localStorage.setItem("cities", JSON.stringify(cities)); 
     }
     
-    function populateHistoryBtnContainer(){
+    function populateSearchHistory(){
         $('#history').empty()
         var citiesSearchHistory = JSON.parse(localStorage.getItem("cities"))
         citiesSearchHistory.forEach(city => {
