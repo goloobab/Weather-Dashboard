@@ -5,12 +5,11 @@ $(document).ready(function () {
         event.preventDefault();
 
         var cityName = $('#search-input').val().trim()
-        if (cityName !== null){
+        if (cityName !== ""){
             storeCityToLocalStorage(cityName);
             displayCityWeather(cityName);
             populateHistoryBtnContainer();
         }
-        
     })
 
     function getCitiesArrayFromLocalStorage(){
@@ -161,88 +160,4 @@ $(document).ready(function () {
     function convertTempToCelsius(tempKelvin) {
         return Number(tempKelvin - 273.15).toFixed(2);
     }
-
-
-    //find out how to extract icon from json data//okay
-    /*
-    ----displayFiveDayForecast(lat, log)----
-        // When you receive an array of 5-day forecast
-
-        forecastDays = response.list
-
-        
-        for (let day in forecastDays){
-        var item = createForecastDayItem(day)
-        forecastDaysContainer.append(item)
-        }
-
-
-    createForecastDayItem(forecastDayData)
-    var temp = ...
-    var humidity = ..
-    var speed = ...
-    var date
-
-    var containerCard = ...
-    var date = $(..).text(formatDate(..))
-    var iconEl = $("<img>).attr("src", getWeatherIconURL(icon-text))
-    var tempEl = $("div").text("Temp " + temp + "C" )
-    ...
-    ...
-
-    return containerCard(date, icon, temp, wind..)
-
-
-    formatDate()
-        return moment(..).
-
-    getWeatherIconURL(icon-text)
-        return -icon url -> https://openweathermap.org/img/w/+ icon-text +.png
-
-    $("<img>).attr("src" getWeatherIconURL(icon-text))
-
-    When user enters city:
-    - goto the geo api that takes city and return lat & lon
-    - call displayCurrentWeatherForecast(lat, lon)
-    - call displayFiveDayForecast(lat, lon)
-
-    displayCurrentWeatherForecast(lat, lon)
-        queryURL -> https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-
-    displayFiveDayForecast(lat, lon)
-        queryURL -> api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
-
-    displaySearchHistory(cityArray // from localStorage)
-
-    if cities.length == 0:
-            * display empty search history container
-    else {
-        for(let city of cities){ //["Paris", "London"]
-            var cityBtn = createCityButton()
-            searchContainer.append(cityBtn)
-        }
-    }
-
-    search()
-    * send ajax request to api with a query-url containing city
-    * inside event listener ->
-        shift -> at front [] <- push at the back
-
-        1. localStorage -> []
-        2. perfom a search of some city's weather e.g London
-        3. push 'city' to localStorage -- ['London']
-        4. call dispalySearchHistory
-            * create city button and attach listener to it which which calls the api using "city's name"
-                inside listener function
-                *$(this).val() <button value="London">London</Button>
-                *$(this).attr("data-city") <button data-city="London">London</Button>
-                *$(this).data("city") <button data-city="London">London</Button>
-
-        5. Another search e.g Paris
-            repeat 3 ( if you want Paris at front use shiftarray method instead of push)
-            repeat 4
-            ["Paris", "London"]
-
-
-    */
 })
