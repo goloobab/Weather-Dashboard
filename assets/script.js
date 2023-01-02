@@ -14,7 +14,7 @@ $(document).ready(function () {
             populateHistoryBtnContainer();
         }
     })
-    populateHistoryBtnContainer();
+    
     function getCitiesArrayFromLocalStorage(){
         var cities = localStorage.getItem("cities")
         if (cities === null){
