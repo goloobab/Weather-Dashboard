@@ -43,10 +43,11 @@ $(document).ready(function () {
     }
     
     function populateHistoryBtnContainer(){
-        var citiesSearchHistory = JSON.parse(localStorage.getItem("cities"))
-        citiesSearchHistory.forEach(city => {
+        var city = JSON.parse(localStorage.getItem("cities"))
+        //citiesSearchHistory.forEach(city => {
             createSearchHistoryBtn(city)
-        });
+        //}); 
+        
     }
    
     function createSearchHistoryBtn(city){
