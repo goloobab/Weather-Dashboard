@@ -24,18 +24,20 @@ $(document).ready(function () {
     
     function storeCityToLocalStorage(cityName) {
         var cities = getCitiesArrayFromLocalStorage()
-        cities.push(cityName)
+        cities.unshift(cityName)
         localStorage.setItem("cities", JSON.stringify(cities)); 
     }
     
     function populateSearchHistory(){
         $('#history').empty()
-        var citiesSearchHistory = JSON.parse(localStorage.getItem("cities"))
+        var citiesSearchHistory = getCitiesArrayFromLocalStorage()
         for(let i =0; i < citiesSearchHistory.length; i++){
-            var button = createSearchHistoryBtn(city)
-            $('#history').prepend(button)
+            if (i + 1 <= 9){
+                var button = createSearchHistoryBtn(citiesSearchHistory[i])
+                $('#history').append(button)
+            }
+            
         }; 
-        
     }
    
     function createSearchHistoryBtn(city){
@@ -45,7 +47,6 @@ $(document).ready(function () {
         });
         return buttonEl
     }
-
 
     //Displays both the current weather and 5 day weather forecast
     function displayCityWeather(cityName) {
