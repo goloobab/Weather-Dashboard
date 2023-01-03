@@ -3,7 +3,7 @@ This app that allows users to search and see the weather forecast for cities of 
 
 ## Description 
 
-This project is a Code Quiz written and developed using Javascript Vanilla API. The user / player of this quiz/application will be presented with a start page witha start button. When the Start Quiz button is pressed the questions will start to display on the screen and the 60 seconds timer will starta  count down. A correct answer earns you a mark while a wron one deducts 10 second from the count down. The quiz ends when the time is up or when all the question are completed. Different players take this quiz and their different scores will be recorded together with their initials.  This is part of my learning journey  towards web development.
+This project is a Weather Dashboard written and developed using Javascript/jQuery, Html and bootsrap. With the help of the Openweather API. The user will be able to enter a city name of there choice and on clicking the search button the current weather statsitics will be presented along with a 5 day weather forecast of the same city. History will be stored for the Recent 9 cities search for and buttons present for easy navigation.
 
 ## Task
 Builing a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
@@ -32,17 +32,17 @@ When a user searches for a city they are presented with current and future condi
 
 ## Challenges
 
-* Determing the data type to use for questions. 
-* saving the users input with scores.
+* Determing the right time stamp to use. 
+* Manuplating the local storage to limit the display history.
 * Accessing saved records from the local storage.
 * Returning the arrays in a sorted format.
 
 ## Things I learned 
 * How useful it is to break down code using functions
-* Using API's in Vanilla javascript.
-* Havng different javascript files pointing to the same html.
-* Making pages interactive with event listeners.
-* Storing data on the client side using the local storage. 
+* Using API's responses as input data for other API calls/queries
+* Returning objects from a function.
+* The importance on emptying a container.
+* The importance of reading API documentation. 
 
 
 ## Screen Shots
