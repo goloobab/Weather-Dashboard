@@ -46,7 +46,7 @@ When a user searches for a city they are presented with current and future condi
 
 
 ## Screen Shots
-
+![Weather-Dashboard-index-html-2023-01-03-21_56_19](https://user-images.githubusercontent.com/26630637/210448153-56105544-c4a1-4f0f-938e-4ca06dc75f7b.png)
 
 ## Links
 Deployed project: https://goloobab.github.io/Weather-Dashboard/
