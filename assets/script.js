@@ -7,11 +7,12 @@ $(document).ready(function () {
     $('#search-button').click(function (event) {
         event.preventDefault();
         var cityName = $('#search-input').val().trim()
-        if (cityName !== "") { //checks if the user inout is not empty
+        if (cityName !== "") { //checks if the user input is not empty
             storeCityToLocalStorage(cityName);
             displayCityWeather(cityName);
             populateSearchHistory();
         }
+        
     })
 
     function getCitiesArrayFromLocalStorage() {
@@ -41,7 +42,7 @@ $(document).ready(function () {
     }
     //Creates the city history buttons
     function createSearchHistoryBtn(city) {
-        var buttonEl = $('<button>').addClass('btn btn-secondary search-button btn-block').text(city);
+        var buttonEl = $('<button>').addClass('btn btn-secondary search-button btn-block text-capitalize').text(city);
         buttonEl.click(function (event) {
             displayCityWeather(city);
         });
@@ -98,7 +99,7 @@ $(document).ready(function () {
             var iconURL = getWeatherIconURL(weatherData.weather[0].icon);
 
             var iconEl = $('<img>').attr('src', iconURL)
-            var titleEl = $('<h4>').addClass('card-title')
+            var titleEl = $('<h4>').addClass('card-title text-capitalize')
             var imageSpanEl = $('<span>').html(iconEl)
 
             return titleEl.text(cityName + ' ' + '(' + date +')').append(imageSpanEl)
