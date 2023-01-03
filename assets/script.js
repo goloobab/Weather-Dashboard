@@ -7,42 +7,42 @@ $(document).ready(function () {
     $('#search-button').click(function (event) {
         event.preventDefault();
         var cityName = $('#search-input').val().trim()
-        if (cityName !== ""){
+        if (cityName !== "") { //checks if the user inout is not empty
             storeCityToLocalStorage(cityName);
             displayCityWeather(cityName);
             populateSearchHistory();
         }
     })
-    
-    function getCitiesArrayFromLocalStorage(){
+
+    function getCitiesArrayFromLocalStorage() {
         var cities = localStorage.getItem("cities")
-        if (cities === null){
+        if (cities === null) {
             localStorage.setItem("cities", JSON.stringify([]))
         }
-        return JSON.parse(localStorage.getItem("cities"))   
+        return JSON.parse(localStorage.getItem("cities"))
     }
-    
+    //Stores the city names in the local storage
     function storeCityToLocalStorage(cityName) {
         var cities = getCitiesArrayFromLocalStorage()
         cities.unshift(cityName)
-        localStorage.setItem("cities", JSON.stringify(cities)); 
+        localStorage.setItem("cities", JSON.stringify(cities));
     }
-    
-    function populateSearchHistory(){
+    //Renders the history buttons
+    function populateSearchHistory() {
         $('#history').empty()
         var citiesSearchHistory = getCitiesArrayFromLocalStorage()
-        for(let i =0; i < citiesSearchHistory.length; i++){
-            if (i + 1 <= 9){
+        for (let i = 0; i < citiesSearchHistory.length; i++) {
+            if (i + 1 <= 9) {
                 var button = createSearchHistoryBtn(citiesSearchHistory[i])
                 $('#history').append(button)
             }
-            
-        }; 
+
+        };
     }
-   
-    function createSearchHistoryBtn(city){
+    //Creates the city history buttons
+    function createSearchHistoryBtn(city) {
         var buttonEl = $('<button>').addClass('btn btn-secondary search-button btn-block').text(city);
-        buttonEl.click(function(event){
+        buttonEl.click(function (event) {
             displayCityWeather(city);
         });
         return buttonEl
