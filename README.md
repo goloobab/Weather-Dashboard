@@ -5,11 +5,6 @@ This app that allows users to search and see the weather forecast for cities of 
 
 This project is a Weather Dashboard written and developed using Javascript/jQuery, Html and bootsrap. With the help of the Openweather API. The user will be able to enter a city name of there choice and on clicking the search button the current weather statsitics will be presented along with a 5 day weather forecast of the same city. History will be stored for the Recent 9 cities search for and buttons present for easy navigation.
 
-##
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-
 ## Task
 Building a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 
