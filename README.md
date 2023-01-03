@@ -6,7 +6,7 @@ This app that allows users to search and see the weather forecast for cities of 
 This project is a Code Quiz written and developed using Javascript Vanilla API. The user / player of this quiz/application will be presented with a start page witha start button. When the Start Quiz button is pressed the questions will start to display on the screen and the 60 seconds timer will starta  count down. A correct answer earns you a mark while a wron one deducts 10 second from the count down. The quiz ends when the time is up or when all the question are completed. Different players take this quiz and their different scores will be recorded together with their initials.  This is part of my learning journey  towards web development.
 
 ## Task
-YBuiling a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+Builing a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 
 ## Acceptance Criteria:
 
@@ -14,7 +14,7 @@ Create a weather dashboard with form inputs.
 
 When a user searches for a city they are presented with current and future conditions for that city and that city is added to the search history.
 
-### When a user views the current weather conditions for that city they are presented with:
+#### When a user views the current weather conditions for that city they are presented with:
 * The city name
 * The date
 * An icon representation of weather conditions
@@ -22,13 +22,13 @@ When a user searches for a city they are presented with current and future condi
 * The humidity
 * The wind speed
 
-### When a user views future weather conditions for that city they are presented with a 5-day forecast that displays:
+#### When a user views future weather conditions for that city they are presented with a 5-day forecast that displays:
 * The date
 * An icon representation of weather conditions
 * The temperature
 * The humidity
 
-### When a user clicks on a city in the search history they are again presented with current and future conditions for that city.
+#### When a user clicks on a city in the search history they are again presented with current and future conditions for that city.
 
 ## Challenges
 
