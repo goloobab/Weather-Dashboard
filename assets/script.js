@@ -101,7 +101,7 @@ $(document).ready(function () {
             var titleEl = $('<h4>').addClass('card-title')
             var imageSpanEl = $('<span>').html(iconEl)
 
-            return titleEl.text(cityName + ' ' + date).append(imageSpanEl)
+            return titleEl.text(cityName + ' ' + '(' + date +')').append(imageSpanEl)
         }
 
         var cardEl = $('<div>').addClass('card mr-2').css({ 'width': '62rem' })
