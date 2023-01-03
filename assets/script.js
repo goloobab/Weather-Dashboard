@@ -51,7 +51,7 @@ $(document).ready(function () {
     //Displays both the current weather and 5 day weather forecast
     function displayCityWeather(cityName) {
         var APIkey = '52d558d3ab565a0485f70b38fab6c332'
-        var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIkey;
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIkey;
 
 
         $.ajax({
