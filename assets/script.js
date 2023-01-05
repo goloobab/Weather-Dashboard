@@ -8,12 +8,26 @@ $(document).ready(function () {
         event.preventDefault();
         var cityName = $('#search-input').val().trim()
         if (cityName !== "") { //checks if the user input is not empty
-            storeCityToLocalStorage(cityName);
             displayCityWeather(cityName);
-            populateSearchHistory();
+            if (!isCityInHistory(cityName)){
+                storeCityToLocalStorage(cityName);
+                populateSearchHistory();
+            }   
         }
-        
     })
+    //hecking to see if the city is in the local Storage 
+    function isCityInHistory(cityName) {
+        cities = getCitiesArrayFromLocalStorage()
+
+        for (let i = 0; i < HISTORY_LIMIT; i++) {
+            if (cities[i] === cityName) {
+                return true
+            }
+        }
+        return false
+    }
+
+
 
     function getCitiesArrayFromLocalStorage() {
         var cities = localStorage.getItem("cities")
@@ -42,7 +56,7 @@ $(document).ready(function () {
     }
     //Creates the city history buttons
     function createSearchHistoryBtn(city) {
-        var buttonEl = $('<button>').addClass('btn btn-secondary search-button btn-block text-capitalize').text(city);
+        var buttonEl = $('<button>').addClass('btn btn-secondary search-button btn-block text-capitalize').text(city).css({'color': 'black'});
         buttonEl.click(function (event) {
             displayCityWeather(city);
         });
