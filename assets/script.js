@@ -1,5 +1,6 @@
 $(document).ready(function () {
-
+    // We want to limit the number of cities in search history to 9
+    const HISTORY_LIMIT = 9;
     // Populate search history when the page loads first time(or when it is refreshed)
     populateSearchHistory()
 
